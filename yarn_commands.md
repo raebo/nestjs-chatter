@@ -14,5 +14,12 @@
 * yarn run start dev
 * yarn add @nestjs/config @nestjs/mongoose mongoose
 
+## for graph ql
+
+
+* npm install @nestjs/common
+* npm install @nestjs/core
+
+* yarn add @nestjs/graphql @nestjs/apollo @apollo/server graphql
 
 
