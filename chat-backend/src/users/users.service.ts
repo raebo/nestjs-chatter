@@ -6,12 +6,12 @@ import { UsersRepository } from './users.repository';
 
 @Injectable()
 export class UsersService {
-  constructor(private readonly usersRepository: UsersRepository) {};
+  constructor(private readonly usersRepository: UsersRepository) {}
 
   async create(createUserInput: CreateUserInput) {
     return this.usersRepository.create({
       ...createUserInput,
-      password: await this.hashPassword(createUserInput.password)
+      password: await this.hashPassword(createUserInput.password),
     });
   }
 
