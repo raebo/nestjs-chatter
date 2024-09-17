@@ -28,7 +28,7 @@ export abstract class AbstractRepository<T extends AbstractEntity> {
     return document;
   }
 
-  async findONeAndUpdate(
+  async findOneAndUpdate(
     filterQuery: FilterQuery<T>,
     update: UpdateQuery<T>,
   ): Promise<T> {
