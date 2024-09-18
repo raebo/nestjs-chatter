@@ -31,7 +31,8 @@
 * for jwt handling
 * yarn add @nestjs/jwt passport-jwt
 * yarn add --save @types/passport-jwt
-
+* yarn add cookie-parser
+* yarn add -D @types/cookie-parser
 
 ## for graph ql
 
