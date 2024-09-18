@@ -13,6 +13,15 @@
 * new new chat-backend
 * yarn run start dev
 * yarn add @nestjs/config @nestjs/mongoose mongoose
+* yarn add joi
+* yarn add @nestjs/common
+* yarn add @nestjs/graphql @nestjs/apollo @apollo/server graphql
+* yarn add bcrypt
+* $ yarn add -D @types/bcrypt
+* yarn add class-validator class-transformer
+* yarn add nestjs-pino pino-http pino-pretty
+* yarn add migrate-mongo
+* yarn add --dev @types/migrate-mongo
 
 ## for graph ql
 
@@ -21,5 +30,4 @@
 * npm install @nestjs/core
 
 * yarn add @nestjs/graphql @nestjs/apollo @apollo/server graphql
-
 
