@@ -28,6 +28,10 @@
 * yarn add @nestjs/passport passport passport-local
 * yarn add --save @types/passport-local
 
+* for jwt handling
+* yarn add @nestjs/jwt passport-jwt
+* yarn add --save @types/passport-jwt
+
 
 ## for graph ql
 
