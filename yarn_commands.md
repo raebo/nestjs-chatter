@@ -5,6 +5,7 @@
 * yarn add @mui/material
 * yarn add @emotion/react @emotion/styled @fontsource/roboto @mui/icons-material
 * yarn add react-router-dom localforage match-sorter sort-by
+* yarn add @apollo/client graphql --save
 
 
 
@@ -22,6 +23,11 @@
 * yarn add nestjs-pino pino-http pino-pretty
 * yarn add migrate-mongo
 * yarn add --dev @types/migrate-mongo
+
+* for passport authentication nodejs
+* yarn add @nestjs/passport passport passport-local
+* yarn add --save @types/passport-local
+
 
 ## for graph ql
 
