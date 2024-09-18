@@ -15,9 +15,10 @@ export class DbMigrationService implements OnModuleInit {
       //   useUnifiedTopology: true,
       // },
     },
-    // migrationsDir: `${__dirname}/../src/migrations`,
+    migrationsDir: `${__dirname}/migrations`,
     changelogCollectionName: 'changelog',
     migrationFileExtension: '.js',
+    useFileHash: true,
   };
 
   async onModuleInit() {
