@@ -1,5 +1,6 @@
 import { gql, useMutation } from "@apollo/client";
 import { User } from "../models/User";
+import { useState } from "react";
 
 interface CreateUserInput {
   createUserInput: {
@@ -7,7 +8,6 @@ interface CreateUserInput {
     password: string;
   }
 }
-
 
 const CREATE_USER = gql`
   mutation CreateUser($createUserInput: CreateUserInput!) {
@@ -19,6 +19,8 @@ const CREATE_USER = gql`
 `
 
 const useCreateUsers = () => {
+  const [error, setError] = useState<boolean>();
+  
   return useMutation<User, CreateUserInput>(CREATE_USER)
 }
 
