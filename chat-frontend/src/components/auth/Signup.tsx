@@ -30,7 +30,10 @@ const SignUp = () => {
             const errorMessage = extractErrorMessage(err);
             if (errorMessage) {
               setError(errorMessage)
+              return;
             }
+            setError("An unknown error occurred.")
+
           }
       }}>
         <Link to="/login" style={{alignSelf: "center" }}>

@@ -11,6 +11,8 @@
 
 # Nest Backend
 
+## additional libraries
+
 * new new chat-backend
 * yarn run start dev
 * yarn add @nestjs/config @nestjs/mongoose mongoose
@@ -33,6 +35,10 @@
 * yarn add --save @types/passport-jwt
 * yarn add cookie-parser
 * yarn add -D @types/cookie-parser
+
+## how to start
+
+* yarn run start:debug
 
 ## for graph ql
 

@@ -1,7 +1,7 @@
 import {
   ConflictException,
   Injectable,
-  UnauthorizedException,
+  UnauthorizedException, UnprocessableEntityException,
 } from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
 import { CreateUserInput } from './dto/create-user.input';
@@ -18,15 +18,19 @@ export class UsersService {
     });
 
     if (existingUser) {
-      throw new ConflictException(
+      throw new UnprocessableEntityException(
         `User with E-Mail '${createUserInput.email}' already exists`,
       );
     }
 
-    return this.usersRepository.create({
-      ...createUserInput,
-      password: await this.hashPassword(createUserInput.password),
-    });
+    try {
+      await this.usersRepository.create({
+        ...createUserInput,
+        password: await this.hashPassword(createUserInput.password),
+      });
+    } catch (error) {
+      throw new Error(error);
+    }
   }
 
   async findAll() {

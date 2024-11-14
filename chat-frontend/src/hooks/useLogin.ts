@@ -8,7 +8,7 @@ interface LoginRequest {
 }
 
 const useLogin = () => {
-  const [error, setError] = useState<boolean>();
+  const [error, setError] = useState<string>();
   
   const login = async (request: LoginRequest) => {
     const res = await fetch(
@@ -20,10 +20,14 @@ const useLogin = () => {
         body: JSON.stringify(request)
       });
     if (!res.ok) {
-      setError(true);
+      if (res.status === 401) {
+        setError("Invalid credentials");
+      } else {
+        setError("An unknown error occurred");
+      }
       return
     }
-    setError(false);
+    setError("");
     await client.refetchQueries({include: "active"})
   };
   
