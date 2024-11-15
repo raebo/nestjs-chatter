@@ -4,10 +4,12 @@ import { Link as MuiLink } from "@mui/material";
 import { useCreateUsers } from "../../hooks/useCreateUsers";
 import { useState } from "react";
 import { extractErrorMessage } from "../utils/errors";
+import { useLogin } from "../../hooks/useLogin";
 
 const SignUp = () => {
   const [createUser] = useCreateUsers();
   const [error, setError] = useState("");
+  const { login } = useLogin();
 
   return (
     <>
@@ -24,6 +26,7 @@ const SignUp = () => {
                 }
               }
             });
+            await login({ email, password });
             setError("")
           } catch (err) {
             console.log("error is is included")
