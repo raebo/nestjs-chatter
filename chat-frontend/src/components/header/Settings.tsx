@@ -7,10 +7,15 @@ import MenuItem from "@mui/material/MenuItem";
 import Typography from "@mui/material/Typography";
 import state from "react";
 import { useState } from "react";
+import { useLogout } from "../../hooks/useLogout";
+import onLogout from "../utils/logout";
 
 const settings: string[] = ['Logout'];
 
 const Settings = () => {
+
+  const { logout } = useLogout();
+
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(
     null
   );
@@ -46,11 +51,14 @@ const Settings = () => {
             open={Boolean(anchorElUser)}
             onClose={handleCloseUserMenu}
           >
-            { settings.map((setting) => (
-              <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                <Typography sx={{ textAlign: 'center' }}>{setting}</Typography>
-              </MenuItem>
-            ))}
+            <MenuItem key={'logout'} onClick={async () => {
+              await logout();
+              await onLogout();
+              handleCloseUserMenu()
+            }
+            }>
+              <Typography sx={{ textAlign: 'center' }}>Logout</Typography>
+            </MenuItem>
           </Menu>
         </Box>
       </>
